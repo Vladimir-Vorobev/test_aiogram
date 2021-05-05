@@ -38,7 +38,7 @@ async def with_puree(message: types.Message):
 
 @dp.message_handler(Text(equals="Прогулка"))
 async def without_puree(message: types.Message):
-    with open("museum.jpg", "rb") as file:
+    with open("media/images/museum.jpg", "rb") as file:
         data = file.read()
     await message.reply(mes.start_walk(), reply_markup=types.ReplyKeyboardRemove())
     await bot.send_photo(message.from_user.id, photo=data)
